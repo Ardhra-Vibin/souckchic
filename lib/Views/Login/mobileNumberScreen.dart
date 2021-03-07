@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:soukchic/Views/Login/verification.dart';
+import 'package:soukchic/Views/Login/verificationScreen.dart';
 import 'package:soukchic/Views/widgets.dart';
-class AddNumber extends StatefulWidget {
+class AddNumberPage extends StatefulWidget {
   @override
-  _AddNumberState createState() => _AddNumberState();
+  _AddNumberPageState createState() => _AddNumberPageState();
 }
 
-class _AddNumberState extends State<AddNumber> {
+class _AddNumberPageState extends State<AddNumberPage> {
 
 List countryCodes = [{"code":"+91","image":"assets/images/india.png"},{"code":"+971","image":"assets/images/uae.png"}];
 var codee;
+
+
+  @override
+  void initState(){
+    super.initState();
+    setState(() {
+      codee = countryCodes[1]["code"];
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +91,7 @@ var codee;
                         height: 50,),
                          Padding(
                            padding: const EdgeInsets.only(left: 8,right: 12),
-                             // child: Text(codee,style: f16B,),
+                           child: Text(codee,style: f16B,),
                          ),
                       Container(
                         width:MediaQuery.of(context).size.width-152,

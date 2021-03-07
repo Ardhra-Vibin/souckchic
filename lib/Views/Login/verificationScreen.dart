@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:soukchic/Views/Login/loadingScreen.dart';
 
 import '../widgets.dart';
 
@@ -59,10 +60,21 @@ class _VerificationState extends State<Verification> {
                     setState(() {
                       currentText = value;
                     });
+                    currentText.length == 4?Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => LoadingPage())):" ";
                   },
                 ),
               ),
             ),
+            SizedBox(height: 70,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Don't receive it?",style: f15,),
+                SizedBox(width: 5,),
+                Text("Click here",style: f15T,)
+              ],
+            )
+
           ],
         ),
       ),

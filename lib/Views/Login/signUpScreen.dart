@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soukchic/Views/Login/addMobileNumber.dart';
+import 'package:soukchic/Views/Login/mobileNumberScreen.dart';
 import 'package:soukchic/Views/widgets.dart';
 
 class SignUp extends StatefulWidget {
@@ -96,7 +96,7 @@ class _SignUpState extends State<SignUp> {
                 MaterialButton(
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => AddNumber()));
+                          builder: (context) => AddNumberPage()));
                     },
                   height: 45,
                   minWidth: MediaQuery.of(context).size.width-30,

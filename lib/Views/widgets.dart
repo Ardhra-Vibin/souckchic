@@ -26,6 +26,11 @@ TextStyle f17 = TextStyle(
   fontSize: 17,
   fontWeight: FontWeight.w400
 );
+TextStyle f17wB = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.w500,
+  fontSize: 17
+);
 TextStyle f16B = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold
