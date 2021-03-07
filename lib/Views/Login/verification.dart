@@ -13,48 +13,58 @@ class _VerificationState extends State<Verification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: Container(
-              width: 260,
-              child: PinCodeTextField(autoFocus: true,
-                // controller: pinController,
-                appContext: context,
-                pastedTextStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 100,right: 12,left: 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.close,color: Colors.black,size: 30,),
+            SizedBox(height: 30,),
+            Text("Enter verification code",style:f17 ,),
+            SizedBox(height: 30,),
+            Text("We sent you a verification code via SMS.",style:f13g ,),
+            SizedBox(height: 70,),
+            Center(
+              child: Container(
+                width: 260,
+                child: PinCodeTextField(autoFocus: true,
+                  // controller: pinController,
+                  appContext: context,
+                  pastedTextStyle: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  length: 4,
+                  obscureText: false,
+                  obscuringCharacter: "*",
+                  animationType: AnimationType.fade,
+                  pinTheme: PinTheme(
+                    selectedColor: Color(0xFF48c0d8),
+                    selectedFillColor: Colors.transparent,
+                    inactiveColor: Colors.black,disabledColor: Colors.black,
+                    activeColor: Colors.grey,
+                    inactiveFillColor: Colors.transparent,
+                    shape: PinCodeFieldShape.underline,
+                    // borderRadius: BorderRadius.circular(5),
+                    fieldHeight: 35,borderWidth: 2,
+                    fieldWidth: 50,
+                    activeFillColor: Colors.transparent,
+                  ),
+                  animationDuration: Duration(milliseconds: 300),
+                  textStyle: TextStyle(fontSize: 25),
+                  backgroundColor: Colors.transparent,
+                  enableActiveFill: true,
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) {
+                    setState(() {
+                      currentText = value;
+                    });
+                  },
                 ),
-                length: 5,
-                obscureText: false,
-                obscuringCharacter: "*",
-                animationType: AnimationType.fade,
-                pinTheme: PinTheme(
-                  selectedColor: primary,
-                  selectedFillColor: Colors.transparent,
-                  inactiveColor: Colors.black,disabledColor: Colors.black,
-                  activeColor: Colors.black,
-                  inactiveFillColor: Colors.transparent,
-                  shape: PinCodeFieldShape.circle,
-                  borderRadius: BorderRadius.circular(5),
-                  fieldHeight: 35,borderWidth: 1,
-                  fieldWidth: 35,
-                  activeFillColor: Colors.transparent,
-                ),
-                animationDuration: Duration(milliseconds: 300),
-                textStyle: f15,
-                backgroundColor: Colors.transparent,
-                enableActiveFill: true,
-                keyboardType: TextInputType.number,
-                onChanged: (value) {
-                  setState(() {
-                    currentText = value;
-                  });
-                },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
