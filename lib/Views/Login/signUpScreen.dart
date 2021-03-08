@@ -13,10 +13,13 @@ class _SignUpState extends State<SignUp> {
   void initState(){
     super.initState();
     setState(() {
-      showPassword = true;
+      showPasswordStrong = true;
+      showPasswordRepeat = true;
     });
   }
-  bool showPassword;
+  bool showPasswordStrong;
+  bool showPasswordRepeat;
+
   @override
   Widget build(BuildContext context) {
 
@@ -44,6 +47,7 @@ class _SignUpState extends State<SignUp> {
                   height: 50,
                   width: width,
                   child: TextField(
+
                     style: f15,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
@@ -60,20 +64,20 @@ class _SignUpState extends State<SignUp> {
                   height: 50,
                   width: width,
                   child: TextField(
+                    obscureText: showPasswordStrong,
                     style: f15,
                     decoration: InputDecoration(
-                      labelText: "Create a strong password",
-                      labelStyle: f11g,
-                      enabledBorder: gBorder,
-                      focusedBorder: TBorder,
                       suffixIcon: IconButton(
-                        onPressed: (){
-                          setState(() {
-                            showPassword = !showPassword;
-                          });
-                        },
-                        icon: Icon(showPassword ? Icons.visibility_off: Icons.visibility,color: Colors.grey,),
-                      )
+                          onPressed: (){
+                            setState(() {
+                              showPasswordStrong = !showPasswordStrong;
+                            });
+                          },
+                          icon:Icon(showPasswordStrong ?Icons.visibility_off : Icons.visibility,color: Colors.grey,)),
+                      labelText: "Password",
+                      labelStyle: f11g,
+                      enabledBorder:gBorder,
+                      focusedBorder: TBorder,
                     ),
                   ),
                 ),
@@ -82,13 +86,20 @@ class _SignUpState extends State<SignUp> {
                   height: 50,
                   width: width,
                   child: TextField(
+                  obscureText:showPasswordRepeat ,
                     style: f15,
                     decoration: InputDecoration(
                       labelText: "Repeat password",
                       labelStyle: f11g,
                       enabledBorder: gBorder,
                       focusedBorder: TBorder,
-                      suffixIcon: IconButton(icon: Icon(showPassword? Icons.visibility_off:Icons.visibility,color: Colors.grey,))
+                      suffixIcon: IconButton(
+                        onPressed:(){
+                          setState(() {
+                            showPasswordRepeat = !showPasswordRepeat;
+                          });
+                        } ,
+                          icon: Icon(showPasswordRepeat? Icons.visibility_off:Icons.visibility,color: Colors.grey,))
                     ),
                   ),
                 ),
