@@ -58,6 +58,20 @@ flutter:
    - assets/images/loading.png
    - assets/images/load.gif
    - assets/images/loading-icegif-1.gif
+   - assets/images/brush.png
+   - assets/images/cream.png
+   - assets/images/dress.png
+   - assets/images/female-hairs.png
+   - assets/images/herb.png
+   - assets/images/high-heels.png
+   - assets/images/running.png
+   - assets/images/shopping-bag.png
+   - assets/images/homeshop1.jpg
+   - assets/images/home1.jpg
+
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -21,6 +21,9 @@ BoxDecoration dec1 = BoxDecoration(
   borderRadius: BorderRadius.circular(6),
   border: Border.all(color: primary)
 );
+BoxDecoration decM = BoxDecoration(
+  border: Border.all(color: Colors.grey)
+);
 
 TextStyle f17 = TextStyle(
   fontSize: 17,
